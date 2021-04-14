@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+        
+        <title>Camara de Representantes</title>
+    </head>
+
+    <body>
+        <div class="container">           
+            <header>                
+                <div class="row">        
+                    <div class="col">        
+                        <img src="img/logo1.png" class="iLogo">         
+                    </div>
+        
+                    <div class="lLogo">                        
+                        <div class="col">        
+                            <h1>TGIF</h1>                                
+                        </div>
+                    </div>
+        
+                    <div class ="col-7"></div>
+    
+                    <div class="correo">                        
+                        <div class="col">        
+                            <a href="mailto:info@tgif.net"><img src="img/iconocorreo.png" class="iCorreo"> info@tgif.net</a>
+                        </div>
+                    </div>                        
+                </div>       
+            </header>
+        
+            <br>
+               
+            <nav class="navbar navbar-expand navbar-dark bg-info">               
+                <div class="navbar-nav">                               
+                        <a class="nav-item nav-link" href="index.html"><img src="img/logonav.jpg" alt="" width="30" height="24" class="d-inline-block align-top">
+                                    Inicio
+                        </a>
+                                
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link active dropdown-toggle" id="navbarDropdownMenuLink" 
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" 
+                                        aria-expanded="false">113º Congreso
+                            </a>
+            
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="senate-data.html">Senado</a>
+                                        <a class="dropdown-item" href="house-data.html">Camara de Representantes</a>
+                            </div>                               
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" 
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" 
+                                    aria-expanded="false">Asistencia
+                             </a>
+        
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="senate-data-asist.html">Senado</a>
+                                    <a class="dropdown-item" href="house-data-asist.html">Camara de Representantes</a>
+                            </div>                            
+                        </div>
+    
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" 
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" 
+                                    aria-expanded="false">Lealtad al partido
+                             </a>
+        
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="senate-data-leal.html">Senado</a>
+                                    <a class="dropdown-item" href="house-data-leal.html">Camara de Representantes</a>
+                            </div>                            
+                        </div>                                
+                </div>   
+            </nav>
+               
+            <br>
+        
+            <main>
+            
+                <div class="card mb-3" style="max-width: 950px;">                        
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h2 class="card-title">Camara de Representantes</h2>
+                                <p class="text-justify">El poder principal de la Cámara es aprobar leyes federales que 
+                                        afecten a todo el país, aunque sus proyectos de ley también deben ser 
+                                        aprobados por el Senado y acordados por el presidente de los Estados Unidos 
+                                        antes de convertirse en ley (a menos que tanto la Cámara como el Senado vuelvan a
+                                        aprobar la legislación). con una mayoría de dos tercios en cada cámara). 
+                                        La Cámara tiene algunos poderes exclusivos: el poder de iniciar proyectos 
+                                        de ley de ingresos, acusar a los funcionarios (los funcionarios acusados ​​son 
+                                        posteriormente juzgados en el Senado) y elegir al presidente de los Estados Unidos
+                                        en caso de que no haya mayoría en el Colegio Electoral.
+                                        Cada estado de EE. UU. Está representado en la Cámara en proporción a su población 
+                                        medida en el censo, pero cada estado tiene derecho a al menos un representante.
+                                </p>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-4">
+                            <img src="img/camara.jpg" class="iCamara">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="app">
+                    <div class="card mb-3" style="max-width: 950px;">
+                        <div class="row g-0">
+                            <div class="col-md-12">
+                                <div class="card-body">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr class="text-white bg-info">
+                                            <th class="text-center">Nombre Senador</th>
+                                            <th class="text-center">Partido</th>
+                                            <th class="text-center">Estado</th>
+                                            <th class="text-center">Antiguedad</th>
+                                            <th class="text-center">Porcentaje de votos</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="house-data" v-for="member in listaCamaraRep">
+                                            <td class="text-center"><a v-bind:href="member.url">{{member.last_name + " " + (member.middle_name == null ? "" : member.middle_name + " ") + member.first_name}}</a></td>
+                                            <td class="text-center">{{member.party}}</td>
+                                            <td class="text-center">{{member.state}}</td>
+                                            <td class="text-center">{{member.seniority + " año(s)"}}</td>
+                                            <td class="text-center">{{member.votes_with_party_pct + " %"}}</td>
+                                        </tbody>
+                                    </table>         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>           
+            </main>
+            
+            <footer class="bottom">   
+                <p> @2021 TGIF | All Rights Reserved </p>
+            </footer>
+            <br>
+        </div>    
+    </body>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="js/mainHouse.js"></script>  
+    
+</html>

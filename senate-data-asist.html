@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Asistencia Senado</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>          
+                <div class="row">
+                    <div class="col">
+                    <img src="img/logo1.png" class="iLogo"> 
+                    </div>
+
+                    <div class="lLogo">                
+                        <div class="col">
+                            <h1>TGIF</h1>                        
+                        </div>
+                    </div>
+
+                    <div class ="col-7"></div>   
+
+                    <div class="correo">               
+                        <div class="col">
+                            <a href="mailto:info@tgif.net"><img src="img/iconocorreo.png" class="iCorreo"> info@tgif.net</a>        
+                        </div>
+                    </div>                
+                </div>
+            </header>
+
+            <br>
+
+            <nav class="navbar navbar-expand navbar-dark bg-info">          
+                <div class="navbar-nav">                    
+                    <a class="nav-item nav-link" href="index.html"><img src="img/logonav.jpg" alt="" width="30" height="24" class="d-inline-block align-top">
+                            Inicio
+                    </a>
+                        
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" 
+                                role="button" data-toggle="dropdown" aria-haspopup="true" 
+                                aria-expanded="false">113º Congreso
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="senate-data.html">Senado</a>
+                                <a class="dropdown-item" href="house-data.html">Camara de Representantes</a>
+                        </div>                    
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link active dropdown-toggle" id="navbarDropdownMenuLink" 
+                                role="button" data-toggle="dropdown" aria-haspopup="true" 
+                                aria-expanded="false">Asistencia
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="senate-data-asist.html">Senado</a>
+                                <a class="dropdown-item" href="house-data-asist.html">Camara de Representantes</a>
+                        </div>                    
+                    </div>
+
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" 
+                                role="button" data-toggle="dropdown" aria-haspopup="true" 
+                                aria-expanded="false">Lealtad al partido
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="senate-data-leal.html">Senado</a>
+                                <a class="dropdown-item" href="house-data-leal.html">Camara de Representantes</a>
+                        </div>
+                    </div>     
+                </div> 
+            </nav>
+            
+            <br>
+
+            <main> 
+                <div id="app">
+                    <div class="card mb-3" style="max-width: 950px;">
+                        <div class="row g-0">                
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h2 class="card-title">Asistencia del Senado</h2>
+                                    <p class="card-text">La Constitución especifica que la mayoría de los miembros constituye un quórum para hacer negocios en cada cámara. Los representantes y senadores rara vez fuerzan la presencia de quórum exigiendo llamadas de quórum; por tanto, en la mayoría de los casos, los debates continúan incluso si no hay mayoría.</p>
+                                    
+                                    <button class="btn btn-info" type="button" data-toggle="collapse" 
+                                        data-target="#collapseSenAsist" aria-expanded="false" 
+                                        aria-controls="collapseSenAsist">
+                                        Leer mas...
+                                    </button>                
+
+                                    <div class="collapse" id="collapseSenAsist">                                        
+                                        <br>
+                                        <p class="card-text">El Senado utiliza votaciones nominales; un secretario dice en voz alta los nombres de todos los senadores y cada senador dice "sí" o "no" cuando se anuncia su nombre. La Cámara se reserva las votaciones nominales para los asuntos más formales, ya que una votación nominal de los 435 representantes lleva bastante tiempo; normalmente, los miembros votan por dispositivo electrónico. En caso de empate, la moción en cuestión falla. En el Senado, el Vicepresidente puede (si está presente) emitir el voto de desempate.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                <h4>Senado de un vistazo</h4>
+                                <table class="table table-striped">                       
+                                    <thead>
+                                        <tr>
+                                            <th>Partido</th>
+                                            <th class="text-center">Nº Representantes</th>
+                                            <th class="text-center">% Votos por Partido</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Republicanos</td>
+                                            <td class="text-center" id="nroVotRepS">--</td>
+                                            <td class="text-center" id="prVotRepS">--</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Democratas</td>
+                                            <td class="text-center" id="nroVotDemS">--</td>
+                                            <td class="text-center" id="prVotDemS">--</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Independientes</td>
+                                            <td class="text-center" id="nroVotIndS">--</td>
+                                            <td class="text-center" id="prVotIndS">--</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Total :</b></td>
+                                            <td class="text-center" id="totPartS">--</td>                                   
+                                        </tr>
+                                    </tbody>
+                                </table>   
+                                </div>                    
+                            </div>
+                        </div>
+                    </div>           
+                    
+                    <div class="card mb-3" style="max-width: 950px;">
+                        <div class="row g-0">
+                        <div class="col-md-6">
+                            <div class="card-body">
+                            <h4>Menos comprometido (10% de asistencia inferior)</h4><br>
+                            <table class="table table-striped">                    
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Nombre</th>
+                                        <th class="text-center">Nº de Votos Perdidos</th>
+                                        <th class="text-center">% Votos Perdidos</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center" id="menos-comp-sen"></tbody>                        
+                            </table>   
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="card-body">
+                            <h4>Más comprometidos (10% de asistencia superior)</h4><br>
+                            <table class="table table-striped">                    
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Nombre</th>
+                                        <th class="text-center">Nº de Votos Perdidos</th>
+                                        <th class="text-center">% Votos Perdidos</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center" id="mas-comp-sen"></tbody>
+                            </table>   
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>  
+            </main>
+
+            <footer class="bottom">               
+                <p> @2021 TGIF | All Rights Reserved </p>
+            </footer>
+            <br>
+        </div>
+    </body> 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="js/senate-estadistica.js"></script>
+
+</html>
